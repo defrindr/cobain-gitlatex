@@ -1,0 +1,103 @@
+html,
+body {
+    background-color: #8377C4;
+    text-align: center;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+header {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    font-size: 3em;
+}
+
+.container {
+    background-color: #fff;
+    margin: 3rem auto 2rem;
+    width: 80%;
+    min-height: 50vh;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px 2px #999;
+    padding: 2rem;
+}
+
+.form {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.form-control {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 3px;
+}
+
+.form-control:focus {
+    outline: 0;
+}
+
+textarea.form-control {
+    height: 35vh;
+    overflow: hidden;
+}
+
+.form-readonly {
+    background-color: #ddd;
+    border: 1px solid #999;
+    padding: 5px;
+    width: 100%;
+}
+
+.form button {
+    margin: 2rem;
+    padding: 5px 35px;
+    color: #eee;
+    background-color: #8377C4;
+    border: 1px solid #999999;
+    border-radius: 5px;
+}
+
+.form button:focus {
+    outline: 0;
+    animation: clicked .5s ease-in;
+}
+
+@keyframes clicked {
+    from {
+        background-color: #ddd;
+    }
+
+    to {
+        background-color: #8377C4;
+    }
+}
+
+footer {
+    padding: .5rem;
+}
+
+.footer-container {
+    padding: 5px;
+    color: #999;
+}
+
+.footer-container .author {
+    font-size: 12px;
+    color: #Da7878;
+}
+
+.footer-container .author:hover {
+    color: #Da7878;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 2em;
+    }
+
+    .container {
+        width: auto;
+    }
+}

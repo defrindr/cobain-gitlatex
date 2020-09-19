@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Latex Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Latex Converter</h1>
+    </header>
+    <div class="container">
+        <div class="form">
+            <input type="text" class="form-readonly" id="output-uri" readonly>
+        </div>
+        <div class="form">
+            <div class="form-group">
+                <textarea name="latex-input" class="form-control" id="latex-input"></textarea>
+            </div>
+            <button onclick="generate();" id="send"> Kirim </button>
+        </div>
+
+        <div id="output-image"></div>
+
+        <div class="footer-container">
+            Template by <span class="author">Defri Indra Mahardika</span>
+        </div>
+    </div>
+    <script>
+        let links = document.querySelector('#output-uri');
+
+        function generate(){
+            let output_img = document.querySelector('#output-image');
+            let uri = "https://render.githubusercontent.com/render/math?math="
+            let input = encodeURIComponent(document.querySelector('#latex-input').value);
+            let img = new Image();
+
+            img.src = uri+input;
+    
+            links.value = img.src;
+
+            output_img.innerHTML = "";
+            output_img.append(img);
+        }
+
+        links.addEventListener('click', () => {
+            links.select();
+            links.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            alert('Successfully Copied text !!')
+        });
+    </script>
+</body>
+</html>
