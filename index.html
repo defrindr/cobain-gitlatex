@@ -35,21 +35,25 @@
             let output_img = document.querySelector('#output-image');
             let uri = "https://render.githubusercontent.com/render/math?math="
             let input = encodeURIComponent(document.querySelector('#latex-input').value);
-            let img = new Image();
 
-            img.src = uri+input;
+            if(input){
+                let img = new Image();
     
-            links.value = img.src;
-
-            output_img.innerHTML = "";
-            output_img.append(img);
+                img.src = uri+input;
+    
+                output_img.innerHTML = "";
+                output_img.append(img);
+                links.value = img.src;
+            }
         }
 
         links.addEventListener('click', () => {
-            links.select();
-            links.setSelectionRange(0, 99999);
-            document.execCommand('copy');
-            alert('Successfully Copied text !!')
+            if(links.value){
+                links.select();
+                links.setSelectionRange(0, 99999);
+                document.execCommand('copy');
+                alert('Successfully Copied text !!')
+            }
         });
     </script>
 </body>
