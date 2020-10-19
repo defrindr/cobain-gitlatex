@@ -1,4 +1,4 @@
-# git-latex
+# Git-Latex
 
 ## Description
 
